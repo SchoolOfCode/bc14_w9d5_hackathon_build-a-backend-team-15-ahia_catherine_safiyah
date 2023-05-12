@@ -6,12 +6,16 @@ const submitButton = document.querySelector("button[type='submit']");
 const ingredientButton = document.querySelector("#add-ingredient");
 const ingredientsInput = document.querySelector("#ingredients-input");
 const ingredientsList = document.querySelector("#ingredients-list");
-const deleteButton = document.querySelectorAll (".deleteBtn")
+// Assign all delete buttons to a variable
+const deleteButton = document.querySelectorAll(".deleteBtn");
 
 ingredientButton.addEventListener("click", addIngredient);
 submitButton.addEventListener("click", handleSubmit);
 getRecipeButton.addEventListener("click", handleClick);
-deleteButton.addEventListener ("click", handleDelete)
+// Loop through all delete buttons and add event listener
+deleteButton.forEach((button) => {
+  button.addEventListener("click", handleDelete);
+});
 
 function addIngredient(event) {
   event.preventDefault();
@@ -70,18 +74,18 @@ async function getRecipes() {
   payload.forEach(renderRecipe);
 }
 
- function deleteRecipe() {
-  //const response = await fetch(`${url}/api/recipes:id`);
-  //const { payload } = await response.json();
-  alert ("YOU HAVE BEEN DELETED");
+// delete recipe that sends a delete request to the server
+async function deleteRecipe(id) {
+  const response = await fetch(`${url}/api/recipes${id}`, { method: "DELETE" });
+  const { payload } = await response.json();
 
+  // // console.log(payload);
+  // console.log("YOU HAVE BEEN DELETED");
 }
 
-function handleDelete(event){
-  event.preventDefault();
-deleteRecipe();
-const deleteButton = document.createElement("button");
-  deleteButton.innerText = "DELETE";
+function handleDelete({ target: { id } }) {
+  preventDefault();
+  deleteRecipe(id);
 }
 
 function renderRecipe(recipe) {
@@ -92,7 +96,10 @@ function renderRecipe(recipe) {
 function createRecipeView({ title, ingredients, instructions, image }) {
   const article = document.createElement("article");
   const h2 = document.createElement("h2");
-  //deleteButton.setAttribute("class= deleteBtn")
+  const deleteButton = document.createElement("button");
+  deleteButton.innerText = "Delete Recipe";
+  // Assign button a class of deleteBtn
+  deleteButton.classList.add("deleteBtn");
   h2.innerText = title;
   const p = document.createElement("p");
   p.innerText = instructions;
@@ -100,11 +107,11 @@ function createRecipeView({ title, ingredients, instructions, image }) {
   img.src = image;
   img.alt = title;
   const list = createIngredientsList(ingredients);
-  article.appendChild(deleteButton);
   article.appendChild(h2);
   article.appendChild(img);
   article.appendChild(list);
   article.appendChild(p);
+  article.appendChild(deleteButton);
   return article;
 }
 

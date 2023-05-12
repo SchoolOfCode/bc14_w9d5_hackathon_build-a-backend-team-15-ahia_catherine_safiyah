@@ -41,6 +41,7 @@ form button {
   background-color: #00897b;
   color: #fff;
   border: none;
+  border-radius: 7px;
   font-size: 1em;
   cursor: pointer;
 }
@@ -71,6 +72,7 @@ form button:hover {
   background-color: #ff5722;
   color: #fff;
   border: none;
+  border-radius: 7px;
   font-size: 1em;
   cursor: pointer;
   margin: 40px auto;
@@ -97,12 +99,14 @@ form button:hover {
 #recipes h2 {
   font-size: 2em;
   margin-bottom: 10px;
+  text-align: center;
 }
 
 #recipes img {
   max-width: 100%;
   height: auto;
   margin-bottom: 20px;
+  border-radius: 7px;
 }
 
 #recipes ul {
