@@ -93,11 +93,49 @@ createRecipe({
 // UPDATE A RECIPE BY ID
 export async function updateRecipeByID(id, updatedRecipe) {
   // READ
+  const allRecipesJSON = await fs.readFile(fileName);
   // PARSE
+  const allRecipes = JSON.parse(allRecipesJSON);
   // MODIFY
-  // STRINGIFY
-  // WRITE
+
+  // here we're creating a variable so that the recipetobeupdated is null
+  let recipeToBeUpdated = null;
+  // here were checking what is happening before the for loop
+
+  // now we are looping through allrecipes arrray
+  for (let i = 0; i < allRecipes.length; i++) {
+    //finding matching ID
+    if (allRecipes[i].id === id) {
+      recipeToBeUpdated = {
+        id: allRecipes[i].id,
+        title: updatedRecipe.title,
+        ingredients: updatedRecipe.ingredients,
+        instructions: updatedRecipe.instructions,
+        image: updatedRecipe.image,
+      };
+      //console.log (recipeToBeUpdated);
+      allRecipes.splice(i, 1, recipeToBeUpdated);
+
+      console.log(allRecipes);
+
+      break;
+    }
+    // STRINGIFY
+  }
+  await fs.writeFile(fileName, JSON.stringify(allRecipes), "utf8");
+  //console.log(recipeToBeUpdated);
 }
+
+updateRecipeByID("f90ba301-e28c-4d18-8eb8-41cad552dfbd", {
+  title: "pasta",
+  ingredients: ["15g of mash", "15g of butter", "15g of toast"],
+  instructions:
+    "Put butter in your mouth, wait 2 seconds to allow slight melting. Then follow with the toast. Swish around for 10-15 seconds to allow even coating of butter on the toast. Then add the beans, slowly.\n  \n    Season to taste.",
+  image:
+    "https://natashaskitchen.com/wp-content/uploads/2019/04/Best-Burger-4-500x375.jpg",
+});
+
+// WRITE
 
 // DELETE A RECIPE BY ID
 export async function deleteRecipeByID(id) {
