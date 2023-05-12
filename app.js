@@ -52,7 +52,7 @@ app.post("/api/recipes/", async (req, res) => {
 app.patch("/api/recipes/:id", async (req, res) => {
   const recipeId = req.params.id;
   const updatedRecipeBody = req.body;
-  console.log(req.body);
+  // console.log(req.body);
   const updatedRecipe = await updateRecipeByID(recipeId, updatedRecipeBody);
 
   res.send({ success: true, payload: updatedRecipeBody });
