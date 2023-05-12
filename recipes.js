@@ -114,7 +114,7 @@ export async function updateRecipeByID(id, updatedRecipe) {
       };
       //console.log (recipeToBeUpdated);
       allRecipes.splice(i, 1, recipeToBeUpdated);
-    //   console.log(allRecipes);
+      //   console.log(allRecipes);
       break;
     }
     // STRINGIFY
