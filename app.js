@@ -39,6 +39,14 @@ app.get("/api/recipes/:id", async (req, res) => {
   // console.log(getRecipe);
 });
 
+// post
+
+app.post("/api/recipes/", async (req, res) => {
+  const newRecipe = req.body;
+  const addNewRecipe = await createRecipe(newRecipe);
+  res.json(addNewRecipe);
+});
+
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
 });
