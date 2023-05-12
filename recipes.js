@@ -77,8 +77,8 @@ export async function createRecipe(newRecipe) {
   return recipeToBeAdded;
 }
 
-/* 
-TESTING createRecipe function 
+ 
+//TESTING createRecipe function 
 
 createRecipe({
   id: "2",
@@ -88,7 +88,7 @@ createRecipe({
     "Put butter in your mouth, wait 2 seconds to allow slight melting. Then follow with the toast. Swish around for 10-15 seconds to allow even coating of butter on the toast. Then add the beans, slowly.\n  \n    Season to taste.",
   image:
     "https://natashaskitchen.com/wp-content/uploads/2019/04/Best-Burger-4-500x375.jpg",
-}); */
+});//
 
 // UPDATE A RECIPE BY ID
 export async function updateRecipeByID(id, updatedRecipe) {
@@ -126,22 +126,39 @@ export async function updateRecipeByID(id, updatedRecipe) {
   //console.log(recipeToBeUpdated);
 }
 
-updateRecipeByID("f90ba301-e28c-4d18-8eb8-41cad552dfbd", {
+/*updateRecipeByID("f90ba301-e28c-4d18-8eb8-41cad552dfbd", {
   title: "pasta",
   ingredients: ["15g of mash", "15g of butter", "15g of toast"],
   instructions:
     "Put butter in your mouth, wait 2 seconds to allow slight melting. Then follow with the toast. Swish around for 10-15 seconds to allow even coating of butter on the toast. Then add the beans, slowly.\n  \n    Season to taste.",
   image:
     "https://natashaskitchen.com/wp-content/uploads/2019/04/Best-Burger-4-500x375.jpg",
-});
+});*/
 
 // WRITE
 
 // DELETE A RECIPE BY ID
 export async function deleteRecipeByID(id) {
   // READ
+  const allRecipesJSON = await fs.readFile(fileName);
   // PARSE
+  const allRecipes = JSON.parse(allRecipesJSON);
+
   // MODIFY
-  // STRINGIFY
-  // WRITE
+  let recipeIndex = null;
+  for (let i = 0; i < allRecipes.length; i++) {
+    if (allRecipes[i].id === id) {
+      recipeIndex = i;
+      break;
+    }
+  }
+  if (recipeIndex !== null) {
+    const deletedRecipe = allRecipes.splice(recipeIndex, 1);
+    //STRINGIFY
+    await fs.writeFile(fileName, JSON.stringify(allRecipes));
+    return deletedRecipe[0];
+  }
+  return recipeIndex;
 }
+
+//deleteRecipeByID("4c848d48-b81e-4d6f-b45d-7b3090f4f8ef");

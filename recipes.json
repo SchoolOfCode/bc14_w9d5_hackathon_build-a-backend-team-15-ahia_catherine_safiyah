@@ -1,15 +1,8 @@
 [
   {
-    "id": "4c848d48-b81e-4d6f-b45d-7b3090f4f8ef",
-    "title": "Beans on Toast",
-    "ingredients": ["150g of beans", "150g of butter", "150g of toast"],
-    "instructions": "Put the butter in your mouth, wait 2 seconds to allow slight melting. Then follow with the toast. Swish around for 10-15 seconds to allow even coating of butter on the toast. Then add the beans, slowly.\n  \n    Season to taste.",
-    "image": "https://natashaskitchen.com/wp-content/uploads/2019/04/Best-Burger-4-500x375.jpg"
-  },
-  {
-    "id": "f90ba301-e28c-4d18-8eb8-41cad552dfbd",
-    "title": "pasta",
-    "ingredients": ["15g of mash", "15g of butter", "15g of toast"],
+    "id": "34487160-5ac9-42d8-b6a3-77f1dd5cc5eb",
+    "title": "Burger",
+    "ingredients": ["15g of beans", "15g of butter", "15g of toast"],
     "instructions": "Put butter in your mouth, wait 2 seconds to allow slight melting. Then follow with the toast. Swish around for 10-15 seconds to allow even coating of butter on the toast. Then add the beans, slowly.\n  \n    Season to taste.",
     "image": "https://natashaskitchen.com/wp-content/uploads/2019/04/Best-Burger-4-500x375.jpg"
   }
