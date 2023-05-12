@@ -77,18 +77,17 @@ export async function createRecipe(newRecipe) {
   return recipeToBeAdded;
 }
 
- 
-//TESTING createRecipe function 
+//TESTING createRecipe function
 
-createRecipe({
-  id: "2",
-  title: "Burger",
-  ingredients: ["15g of beans", "15g of butter", "15g of toast"],
-  instructions:
-    "Put butter in your mouth, wait 2 seconds to allow slight melting. Then follow with the toast. Swish around for 10-15 seconds to allow even coating of butter on the toast. Then add the beans, slowly.\n  \n    Season to taste.",
-  image:
-    "https://natashaskitchen.com/wp-content/uploads/2019/04/Best-Burger-4-500x375.jpg",
-});//
+// createRecipe({
+//   id: "2",
+//   title: "Burger",
+//   ingredients: ["15g of beans", "15g of butter", "15g of toast"],
+//   instructions:
+//     "Put butter in your mouth, wait 2 seconds to allow slight melting. Then follow with the toast. Swish around for 10-15 seconds to allow even coating of butter on the toast. Then add the beans, slowly.\n  \n    Season to taste.",
+//   image:
+//     "https://natashaskitchen.com/wp-content/uploads/2019/04/Best-Burger-4-500x375.jpg",
+// });//
 
 // UPDATE A RECIPE BY ID
 export async function updateRecipeByID(id, updatedRecipe) {
