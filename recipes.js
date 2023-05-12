@@ -114,9 +114,7 @@ export async function updateRecipeByID(id, updatedRecipe) {
       };
       //console.log (recipeToBeUpdated);
       allRecipes.splice(i, 1, recipeToBeUpdated);
-
-      console.log(allRecipes);
-
+    //   console.log(allRecipes);
       break;
     }
     // STRINGIFY
@@ -125,14 +123,14 @@ export async function updateRecipeByID(id, updatedRecipe) {
   //console.log(recipeToBeUpdated);
 }
 
-/*updateRecipeByID("f90ba301-e28c-4d18-8eb8-41cad552dfbd", {
-  title: "pasta",
-  ingredients: ["15g of mash", "15g of butter", "15g of toast"],
-  instructions:
-    "Put butter in your mouth, wait 2 seconds to allow slight melting. Then follow with the toast. Swish around for 10-15 seconds to allow even coating of butter on the toast. Then add the beans, slowly.\n  \n    Season to taste.",
-  image:
-    "https://natashaskitchen.com/wp-content/uploads/2019/04/Best-Burger-4-500x375.jpg",
-});*/
+// updateRecipeByID("e1c050f7-a5d9-471d-8b23-1a5471b0bf6e", {
+//   title: "cheese",
+//   ingredients: ["15g of cheese", "15g of cheese", "15g of cheese"],
+//   instructions:
+//     "Put butter in your mouth, wait 2 seconds to allow slight melting. Then follow with the toast. Swish around for 10-15 seconds to allow even coating of butter on the toast. Then add the beans, slowly.\n  \n    Season to taste.",
+//   image:
+//     "https://natashaskitchen.com/wp-content/uploads/2019/04/Best-Burger-4-500x375.jpg",
+// });
 
 // WRITE
 
