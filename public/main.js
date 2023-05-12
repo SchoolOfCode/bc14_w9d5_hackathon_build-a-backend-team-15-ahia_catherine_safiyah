@@ -80,7 +80,8 @@ async function getRecipes() {
 function handleDelete(event){
   event.preventDefault();
 deleteRecipe();
-
+const deleteButton = document.createElement("button");
+  deleteButton.innerText = "DELETE";
 }
 
 function renderRecipe(recipe) {
@@ -91,8 +92,6 @@ function renderRecipe(recipe) {
 function createRecipeView({ title, ingredients, instructions, image }) {
   const article = document.createElement("article");
   const h2 = document.createElement("h2");
-  const deleteButton = document.createElement("button");
-  deleteButton.innerText = "DELETE";
   //deleteButton.setAttribute("class= deleteBtn")
   h2.innerText = title;
   const p = document.createElement("p");
