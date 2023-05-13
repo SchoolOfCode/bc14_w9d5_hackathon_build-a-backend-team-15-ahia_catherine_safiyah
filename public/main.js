@@ -26,7 +26,6 @@ function addIngredient(event) {
 
 function handleSubmit(event) {
   event.preventDefault();
-
   createRecipe();
 }
 
@@ -73,20 +72,48 @@ function renderRecipe(recipe) {
   recipesSection.appendChild(article);
 }
 
-function createRecipeView({ title, ingredients, instructions, image }) {
+function createRecipeView({ id, title, ingredients, instructions, image }) {
+  // id needed to be added here as an input
   const article = document.createElement("article");
   const h2 = document.createElement("h2");
+  const deleteBtn = document.createElement("button"); // create a the delete button element for the DOM
+
   h2.innerText = title;
   const p = document.createElement("p");
   p.innerText = instructions;
   const img = document.createElement("img");
   img.src = image;
   img.alt = title;
+  deleteBtn.innerText = "delete"; //  change delete to ID to see each ID for each object
+
   const list = createIngredientsList(ingredients);
+  article.appendChild(deletebtn); // attach the button to recipe that is rended
   article.appendChild(h2);
   article.appendChild(img);
   article.appendChild(list);
   article.appendChild(p);
+
+  deleteBtn.addEventListener("click", handleDeleteCard); // create an event listener to the rended button
+
+  function handleDeleteCard(event) {
+    event.preventDefault();
+    // alert(`${id}`); // this was a test to see if the button displayed the correct ID
+
+    let deleteUrl = `${url}/api/recipes/${id}`; // ${id} --> this is the id for the path
+    let option = {
+      // create a variable to pass down the method to use in the api CALL
+      method: "DELETE",
+    };
+
+    deleteRecipe(deleteUrl, option); // calls the function with both parameters
+    async function deleteRecipe() {
+      const response = await fetch(deleteUrl, option);
+      const data = await response.json();
+      console.log(data);
+      getRecipes(); // re-renderdes and get all remaining recipes --> rinse and repeat
+    }
+  }
+
   return article;
 }
 
@@ -104,4 +131,4 @@ function createIngredient(ingredient) {
   return li;
 }
 
-getRecipes();
+// getRecipes();
