@@ -15,24 +15,24 @@ import {
 } from "./recipes.js";
 
 const app = express();
-const PORT = 3000;
+const address = "http:locaolhost:";
+const PORT = 3001;
 
-// app.use(express.static("public"));
+app.use(express.static("public"));
 
 app.use(express.json());
 
 // get all recipes
 app.get("/api/recipes", async (req, res) => {
   const allRecipes = await getRecipes();
-
-  res.send(`success: true, payload: ${allRecipes}`);
+  res.send({ success: true, payload: allRecipes });
 });
 
 // get recipe by ID
 app.get("/api/recipes/:id", async (req, res) => {
   const recipeId = req.params.id;
   const getRecipe = await getRecipeByID(recipeId);
-  res.json(`success: true, payload: ${getRecipe}`);
+  res.send({ success: true, payload: getRecipe });
 
   // res.send(getRecipe);
   // res.json(getRecipe);
@@ -47,6 +47,12 @@ app.post("/api/recipes/", async (req, res) => {
   res.json(addNewRecipe);
 });
 
+app.delete("/api/recipes/:id", async (req, res) => {
+  const recipeId = req.params.id;
+  const recipeToDelete = await deleteRecipeByID(recipeId);
+  res.send({ sucess: true, payload: recipeToDelete });
+});
+
 app.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}`);
+  console.log(`Server is up and running : http:localhost:${PORT}`);
 });

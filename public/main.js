@@ -1,4 +1,4 @@
-const url = "http://localhost:3000";
+const url = "http://localhost:3001";
 
 const recipesSection = document.querySelector("#recipes");
 const getRecipeButton = document.querySelector("#get-recipes");
@@ -87,7 +87,7 @@ function createRecipeView({ id, title, ingredients, instructions, image }) {
   deleteBtn.innerText = "delete"; //  change delete to ID to see each ID for each object
 
   const list = createIngredientsList(ingredients);
-  article.appendChild(deletebtn); // attach the button to recipe that is rended
+  article.appendChild(deleteBtn); // attach the button to recipe that is rended
   article.appendChild(h2);
   article.appendChild(img);
   article.appendChild(list);
@@ -131,4 +131,4 @@ function createIngredient(ingredient) {
   return li;
 }
 
-// getRecipes();
+getRecipes();

@@ -1,16 +1,1 @@
-[
-  {
-    "id": "34487160-5ac9-42d8-b6a3-77f1dd5cc5eb",
-    "title": "Burger",
-    "ingredients": ["15g of beans", "15g of butter", "15g of toast"],
-    "instructions": "Put butter in your mouth, wait 2 seconds to allow slight melting. Then follow with the toast. Swish around for 10-15 seconds to allow even coating of butter on the toast. Then add the beans, slowly.\n  \n    Season to taste.",
-    "image": "https://natashaskitchen.com/wp-content/uploads/2019/04/Best-Burger-4-500x375.jpg"
-  },
-  {
-    "id": "7a8a1f3a-c178-42b3-960b-28f1c6fd8aee",
-    "title": "mash",
-    "ingredients": ["10g of beans", "1g of butter", "15g of toast"],
-    "instructions": "Put butter in your mouth, wait 2 seconds to allow slight melting. Then follow with the toast. Swish around for 10-15 seconds to allow even coating of butter on the toast. Then add the beans, slowly.\n  \n    Season to taste.",
-    "image": "https://natashaskitchen.com/wp-content/uploads/2019/04/Best-Burger-4-500x375.jpg"
-  }
-]
+[{"id":"d52a6b7d-8750-42a7-882b-5311d43f3e95","title":"Pasta Carbonara","ingredients":["200g of spaghetti","100g of pancetta","2 large eggs","50g of grated Parmesan cheese","Salt and pepper to taste"],"instructions":"Cook the spaghetti in salted boiling water until al dente. \n In a separate pan, cook the pancetta until crispy. In a bowl, whisk together the eggs, grated Parmesan cheese, salt, and pepper. Drain the cooked spaghetti and return it to the pan. Add the cooked pancetta and the egg mixture to the spaghetti. \n Toss everything together until the eggs are cooked by the residual heat and form a creamy sauce. \n Serve hot and garnish with additional grated Parmesan cheese, if desired.","image":"https://www.simplyrecipes.com/thmb/P4yXPHE_78XC29Pg_MCUrVwmRgo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Simply-Recipes-Spaghetti-Carbonara-LEAD-6-b3880a6eb49f4158be6f13885c797ded.jpg"},{"id":"d3f47eb3-83e7-4c8b-aaad-4a3842c1f4a8","title":"Chocolate Chip Cookies","ingredients":["200g of butter","200g of granulated sugar","200g of brown sugar","2 large eggs","5ml of vanilla extract","400g of all-purpose flour","5g of baking soda","5g of salt","200g of chocolate chips"],"instructions":"Preheat your oven to 180°C (350°F). \n In a large bowl, cream together the butter, granulated sugar, and brown sugar until light and fluffy. Beat in the eggs one at a time, then stir in the vanilla extract. \n In a separate bowl, whisk together the flour, baking soda, and salt. Gradually add the dry ingredients to the butter mixture and mix until just combined. Stir in the chocolate chips. \n Drop rounded tablespoons of dough onto ungreased baking sheets. \n Bake for 10-12 minutes or until golden brown. Allow the cookies to cool on the baking sheets for a few minutes, then transfer them to wire racks to cool completely. \n Enjoy!","image":"https://www.shugarysweets.com/wp-content/uploads/2020/05/chocolate-chip-cookies-baked.jpg"}]
